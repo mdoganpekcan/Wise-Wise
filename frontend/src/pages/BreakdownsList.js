@@ -12,6 +12,7 @@ function BreakdownsList() {
 
   useEffect(() => {
     fetchBreakdowns();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filter]);
 
   const fetchBreakdowns = async () => {

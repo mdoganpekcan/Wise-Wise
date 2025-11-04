@@ -4,7 +4,7 @@ import { expensesAPI, breakdownsAPI } from '../services/api';
 import { useNavigate } from 'react-router-dom';
 
 function Dashboard() {
-  const { user, isDriver, isManager } = useAuth();
+  const { user, isDriver } = useAuth();
   const [expenses, setExpenses] = useState([]);
   const [breakdowns, setBreakdowns] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -12,6 +12,7 @@ function Dashboard() {
 
   useEffect(() => {
     fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const fetchData = async () => {
